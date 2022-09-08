@@ -51,6 +51,8 @@ class Runner:
 
     def watch(self):
         try:
+            print(self._file_watcher)
+            print(self._exercise_seeker)
             prompt.on_watch_start(self._exercise_seeker.get_next_undone())
             with contextlib.suppress(KeyboardInterrupt):
                 self._file_watcher.start(self.on_file_changed)
